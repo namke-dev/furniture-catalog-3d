@@ -1,18 +1,17 @@
 import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
-export function Model(props) {
-  const { nodes, materials } = useGLTF("/data/models/model1/scene.gltf");
+export function Model3(props) {
+  const { nodes, materials } = useGLTF("/models/model3/scene.gltf");
   return (
     <group {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]}>
         <mesh
-          geometry={nodes.Object_29.geometry}
-          material={materials.ASSENTO}
+          geometry={nodes.Object_21.geometry}
+          material={materials.Transluc}
         />
-        <mesh geometry={nodes.Object_5.geometry} material={materials.ENCOSTO} />
         <mesh
-          geometry={nodes.Object_8.geometry}
+          geometry={nodes.Object_9.geometry}
           material={materials.ESTRUTUR}
         />
         <mesh
@@ -20,7 +19,15 @@ export function Model(props) {
           material={materials.ESTRUTUR}
         />
         <mesh
-          geometry={nodes.Object_12_1.geometry}
+          geometry={nodes.Object_11.geometry}
+          material={materials.ESTRUTUR}
+        />
+        <mesh
+          geometry={nodes.Object_12.geometry}
+          material={materials.ESTRUTUR}
+        />
+        <mesh
+          geometry={nodes.Object_13.geometry}
           material={materials.ESTRUTUR}
         />
         <mesh
@@ -28,36 +35,33 @@ export function Model(props) {
           material={materials.ESTRUTUR}
         />
         <mesh
+          geometry={nodes.Object_15.geometry}
+          material={materials.ESTRUTUR}
+        />
+        <mesh
           geometry={nodes.Object_16.geometry}
           material={materials.ESTRUTUR}
         />
         <mesh
-          geometry={nodes.Object_18.geometry}
+          geometry={nodes.Object_17.geometry}
           material={materials.ESTRUTUR}
         />
         <mesh
-          geometry={nodes.Object_20.geometry}
+          geometry={nodes.Object_8.geometry}
           material={materials.ESTRUTUR}
         />
         <mesh
-          geometry={nodes.Object_22.geometry}
+          geometry={nodes.Object_7.geometry}
           material={materials.ESTRUTUR}
         />
         <mesh
-          geometry={nodes.Object_24.geometry}
+          geometry={nodes.Object_19.geometry}
           material={materials.ESTRUTUR}
         />
-        <mesh
-          geometry={nodes.Object_26.geometry}
-          material={materials.ESTRUTUR}
-        />
-        <mesh
-          geometry={nodes.Object_28.geometry}
-          material={materials.ESTRUTUR}
-        />
+        <mesh geometry={nodes.Object_20.geometry} material={materials.PALHA} />
       </group>
     </group>
   );
 }
 
-useGLTF.preload("/data/models/model1/scene.gltf");
+useGLTF.preload("/scene.gltf");
