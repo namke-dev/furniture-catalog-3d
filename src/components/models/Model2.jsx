@@ -2,15 +2,15 @@ import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 
-export function Model2(props) {
-  const { nodes, materials } = useGLTF("/models/model2/scene.gltf");
+export function MordernStyleTable(props) {
+  const { nodes, materials } = useGLTF("./models/model2/scene.gltf");
   const modelRef = useRef(null);
   useFrame((state, delta) => {
     modelRef.current.rotation.y += delta * 0.1;
   });
 
   return (
-    <group {...props} dispose={null} ref={modelRef} scale={2}>
+    <group {...props} dispose={null} ref={modelRef} scale={1.5}>
       <group rotation={[-Math.PI / 2, 0, 0]}>
         <mesh geometry={nodes.Object_18.geometry} material={materials.VIDRO} />
         <mesh geometry={nodes.Object_15.geometry} material={materials.BASE} />
@@ -34,4 +34,4 @@ export function Model2(props) {
   );
 }
 
-useGLTF.preload("/scene.gltf");
+useGLTF.preload("./models/model2/scene.gltf");
